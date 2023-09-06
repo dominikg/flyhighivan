@@ -1,0 +1,19 @@
+html {
+	height: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 0;
+	height: 100%;
+	overflow: hidden;
+	background-image: url('../assets/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	font-family: 'Cooper Hewitt', sans-serif;
+	letter-spacing: 0.25px;
+}
+main {
+	height: 100%;
+}

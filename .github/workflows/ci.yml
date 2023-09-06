@@ -1,0 +1,37 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  check:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2.4.0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --prefer-offline --ignore-scripts
+      - run: pnpm build
+      - name: format
+        run: pnpm check:format
+        if: ${{ !cancelled() }}
+      - name: lint
+        if: ${{ !cancelled() }}
+        run: pnpm check:lint
+      - name: types
+        if: ${{ !cancelled() }}
+        run: pnpm check:types
+      - name: inlang
+        if: ${{ !cancelled() }}
+        run: pnpm check:inlang
