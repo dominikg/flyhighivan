@@ -4,6 +4,7 @@
 	import '../styles/global.css';
 	import { languages } from '@inlang/sdk-js';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	const dob = new Date(Date.UTC(1995, 5, 29, 3, 0, 0, 0));
 	const dop = new Date(Date.UTC(2023, 8, 26, 3, 0, 0, 0));
 	$: currentLang = $page.params.lang;
@@ -13,7 +14,7 @@
 <header>
 	<nav>
 		{#each languages as language}
-			<a class:active={language === currentLang} href="/{language}">{language}</a>
+			<a class:active={language === currentLang} href="{base}/{language}">{language}</a>
 		{/each}
 	</nav>
 </header>

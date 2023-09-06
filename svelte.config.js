@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import glob from 'tiny-glob/sync.js';
-const languagePaths = glob('./languages/*.json').map((f) => f.slice(f.lastIndexOf('/'), -5));
+//import glob from 'tiny-glob/sync.js';
+//const languagePaths = glob('./languages/*.json').map((f) => f.slice(f.lastIndexOf('/'), -5));
 
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -20,8 +20,7 @@ const config = {
 			base: PRODUCTION ? '/flyhighivan' : '',
 		},
 		prerender: {
-			entries: languagePaths,
-			crawl: false,
+			crawl: true,
 		},
 	},
 };
