@@ -9,7 +9,7 @@
 		"check": "run-p -c check:*",
 		"check:types": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:lint": "eslint --cache --ignore-path .gitignore '**/*.{js,ts,svelte}'",
-		"check:format": "prettier --cache --ignore-path .gitignore . --ignore-unknown --check",
+		"check:format": "prettier --cache --ignore-path .gitignore . --ignore-unknown --plugin prettier-plugin-svelte --check",
 		"check:inlang": "inlang lint",
 		"lint": "pnpm check:lint --fix",
 		"format": "pnpm check:format --write",
