@@ -15,14 +15,13 @@ export async function defineConfig(env) {
 
 	return {
 		referenceLanguage: 'de',
-
 		plugins: [
 			jsonPlugin({
 				pathPattern: './languages/{language}.json',
 			}),
 			sdkPlugin({
 				languageNegotiation: {
-					strategies: [{ type: 'url' }],
+					strategies: [{ type: 'localStorage' }, { type: 'navigator' }],
 				},
 			}),
 			standardLintRules(),

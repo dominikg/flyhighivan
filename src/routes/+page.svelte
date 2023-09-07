@@ -1,4 +1,21 @@
-<!-- This file was created by inlang.
-It is needed in order to circumvent a current limitation of SvelteKit. See https://github.com/inlang/inlang/issues/647
-You can remove this comment and modify the file as you like. We just need to make sure it exists.
-Please do not delete it (inlang will recreate it if needed). -->
+<script lang="ts">
+	import { i } from '@inlang/sdk-js';
+</script>
+
+<div>
+	<h1>{i('in-memoriam')}</h1>
+</div>
+
+<style>
+	div {
+		position: relative;
+		height: 100%;
+	}
+	h1 {
+		position: absolute;
+		top: 61.8%;
+		padding: 1rem;
+		width: 100%;
+		text-align: center;
+	}
+</style>

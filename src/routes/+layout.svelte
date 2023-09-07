@@ -2,21 +2,31 @@
 	import 'sanitize.css';
 	import 'sanitize.css/typography.css';
 	import '../styles/global.css';
-	import { languages } from '@inlang/sdk-js';
-	import { page } from '$app/stores';
-	import { base } from '$app/paths';
+	import { language, languages, switchLanguage, loadResource } from '@inlang/sdk-js';
 	const dob = new Date(Date.UTC(1995, 5, 29, 3, 0, 0, 0));
 	const dop = new Date(Date.UTC(2023, 8, 26, 3, 0, 0, 0));
-	$: currentLang = $page.params.lang;
+	let currentLang = language as string;
+
+	async function changeLang(lang: string) {
+		await switchLanguage(lang);
+		currentLang = lang;
+	}
+
 	$: dateFormat = new Intl.DateTimeFormat(currentLang);
 </script>
 
 <header>
-	<nav>
-		{#each languages as language}
-			<a class:active={language === currentLang} href="{base}/{language}">{language}</a>
-		{/each}
-	</nav>
+	{#each languages as lang}
+		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+		<button
+			type="button"
+			class:active={lang === currentLang}
+			on:mouseover={() => loadResource(lang)}
+			on:click={() => changeLang(lang)}
+		>
+			{lang}
+		</button>
+	{/each}
 </header>
 <main>
 	<slot />
@@ -28,7 +38,7 @@
 </footer>
 
 <style>
-	nav,
+	header,
 	footer {
 		width: 100%;
 		display: flex;
@@ -38,17 +48,14 @@
 		flex-wrap: wrap;
 		padding: 0.5rem;
 	}
-	a {
+	button {
+		all: unset;
 		text-transform: uppercase;
-		color: currentColor;
-		text-decoration: none;
+		cursor: pointer;
 	}
-	a.active,
-	a:focus,
-	a:hover {
+	button.active,
+	button:focus,
+	button:hover {
 		font-weight: bold;
-	}
-	a:visited {
-		color: currentColor;
 	}
 </style>
