@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { i } from '@inlang/sdk-js';
+	import { language, i } from '@inlang/sdk-js';
 </script>
 
 <div>
-	<h1>{i('in-memoriam')}</h1>
+	<h1 lang={language} dir="auto">{i('in-memoriam')}</h1>
 </div>
 
 <style>
