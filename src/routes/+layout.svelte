@@ -3,8 +3,8 @@
 	import 'sanitize.css/typography.css';
 	import '../styles/global.css';
 	import { language, languages, switchLanguage, loadResource } from '@inlang/sdk-js';
-	const dob = new Date(Date.UTC(1995, 5, 29, 3, 0, 0, 0));
-	const dop = new Date(Date.UTC(2023, 8, 26, 3, 0, 0, 0));
+	const dob = new Date(Date.UTC(1995, 4, 29, 3, 0, 0, 0));
+	const dop = new Date(Date.UTC(2023, 7, 26, 3, 0, 0, 0));
 	let currentLang = language as string;
 
 	async function changeLang(lang: string) {
