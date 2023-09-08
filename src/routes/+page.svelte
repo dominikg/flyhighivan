@@ -17,5 +17,11 @@
 		padding: 1rem;
 		width: 100%;
 		text-align: center;
+		font-size: 1.5rem;
+	}
+	@media screen and (min-width: 640px) {
+		h1 {
+			font-size: 2rem;
+		}
 	}
 </style>
