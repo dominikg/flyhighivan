@@ -1,4 +1,4 @@
-# Obituary page for Ivan Hofer
+# [Obituary page for Ivan Hofer](https://dominikg.github.io/flyhighivan/)
 
 We miss you Ivan.
 
