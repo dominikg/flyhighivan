@@ -1,0 +1,1 @@
+{"type":"Resource","languageTag":{"type":"LanguageTag","name":"zh"},"body":[{"type":"Message","metadata":{"keyName":"in-memoriam"},"id":{"type":"Identifier","name":"in-memoriam"},"pattern":{"type":"Pattern","elements":[{"type":"Text","value":"我们会爱你，永远不会忘记你，永远把你放在心里"}]}}]}

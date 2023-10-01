@@ -1,0 +1,1 @@
+{"type":"Resource","languageTag":{"type":"LanguageTag","name":"hi"},"body":[{"type":"Message","metadata":{"keyName":"in-memoriam"},"id":{"type":"Identifier","name":"in-memoriam"},"pattern":{"type":"Pattern","elements":[{"type":"Text","value":"हम तुम्हें हमेशा याद रखेंगे, कभी नहीं भूलेंगे और हमेशा तुम्हें अपने दिल में रखेंगे।"}]}}]}
